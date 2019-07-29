@@ -1,0 +1,72 @@
+/**
+ * This Source Code Form is subject to the terms of the Mozilla Public License, v.
+ * 2.0 with a Healthcare Disclaimer.
+ * A copy of the Mozilla Public License, v. 2.0 with the Healthcare Disclaimer can
+ * be found under the top level directory, named LICENSE.
+ * If a copy of the MPL was not distributed with this file, You can obtain one at
+ * http://mozilla.org/MPL/2.0/.
+ * If a copy of the Healthcare Disclaimer was not distributed with this file, You
+ * can obtain one at the project website https://github.com/igia.
+ *
+ * Copyright (C) 2018-2019 Persistent Systems, Inc.
+ */
+@import '../../content/scss/partials/variables';
+.subtext {
+    font-size: 0.8rem;
+}
+
+#calculatorForm {
+    -webkit-box-shadow: 2px 4px 21px -4px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 2px 4px 21px -4px rgba(0, 0, 0, 0.45);
+    box-shadow: 2px 4px 21px -4px rgba(0, 0, 0, 0.45);
+    padding: 0rem 1rem;
+    background: #fdfffe;
+    .form-group {
+        margin-bottom: 0rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.3rem;
+        border-bottom: 1px solid $igia-border-color;
+        .col-sm-2 {
+            padding-top: 0.4rem;
+        }
+    }
+    .resultValues {
+        padding-top: 0.6rem;
+    }
+}
+.calculate-btn {
+    background: $igia-title-color;
+    color: $igia-data-bg-color;
+    border-color: $igia-title-color;
+    height: 4.3rem;
+    width: 70%;
+}
+
+.result-Box {
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+}
+.box-border {
+    border: 2px solid $igia-primary-color;
+}
+
+.no-left-border {
+    border-left: none;
+}
+.result .box-border {
+    height: 4.5rem;
+}
+.resultText {
+    color: $igia-primary-color;
+    display: table;
+    height: 4.6rem;
+    h4 {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+// .btn:disabled {
+//     cursor: not-allowed;
+// }

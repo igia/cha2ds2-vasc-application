@@ -1,0 +1,34 @@
+{
+    "global": {
+        "title": "Cha2ds2vascapp",
+        "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
+        "menu": {
+            "home": "Home",
+            "calculator": "Calculator",
+            "login": "Sign In",
+            "logout": "Sign Out",
+            "language": "Language"
+        },
+        "ribbon": {
+            "standalone": "Standalone",
+            "dev":"Development"
+        },
+        "item-count": "Showing {{first}} - {{second}} of {{total}} items."
+    },
+    "error": {
+        "internalServerError": "Internal server error",
+        "server.not.reachable": "Server not reachable",
+        "url.not.found": "Not found",
+        "NotNull": "Field {{ fieldName }} cannot be empty!",
+        "Size": "Field {{ fieldName }} does not meet min/max size requirements!",
+        "userexists": "Login name already used!",
+        "emailexists": "Email is already in use!",
+        "idexists": "A new {{ entityName }} cannot already have an ID",
+        "idnull": "Invalid ID"
+    },
+    "footer": {
+        "contact": "Contact us",
+        "copyright.year": "2018-2019",
+        "copyright.persistent": "Persistent Systems"
+    }
+}

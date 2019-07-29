@@ -1,0 +1,266 @@
+<!--
+
+    This Source Code Form is subject to the terms of the Mozilla Public License, v.
+    2.0 with a Healthcare Disclaimer.
+    A copy of the Mozilla Public License, v. 2.0 with the Healthcare Disclaimer can
+    be found under the top level directory, named LICENSE.
+    If a copy of the MPL was not distributed with this file, You can obtain one at
+    http://mozilla.org/MPL/2.0/.
+    If a copy of the Healthcare Disclaimer was not distributed with this file, You
+    can obtain one at the project website https://github.com/igia.
+
+    Copyright (C) 2018-2019 Persistent Systems, Inc.
+
+-->
+<div class="card m-3 px-5 py-4">
+    <div class="row">
+        <div class="col-12">
+                <h4>CHA<sub>2</sub>DS<sub>2</sub>-VASc Score</h4>
+            <hr>
+            <p>
+                Atrial Fibrillation (often called “afib” or “AF”) is a type of cardiac arrhythmia that affects almost
+                10% of the population older than 65. AF increases the risk of thromboembolic disease (for
+                example, stroke), and many patients with AF warrant treatment with anticoagulation to reduce
+                the risk of thromboembolic disease. Anticipating the patients that would most benefit from
+                anticoagulation therapy is important to weigh this benefit against the risk of bleeding associated
+                with these medications. Numerous risk prediction scores have been developed to estimate the
+                risk of thromboembolic disease for patients with atrial fibrillation, with the goal of using that risk
+                to guide treatment discussions around anticoagulation.
+            </p>
+            <p>
+                CHA<sub>2</sub>DS<sub>2</sub>-VASc is one of these validated risk stratification scores for estimating the risk of
+                stroke for patients with nonvalvular atrial fibrillation. The score is determined by adding 1 or 2
+                points for each of the variables--(cardiac failure or dysfunction, hypertension, age ≥75 [2 points],
+                diabetes, stroke [2 points], vascular disease, Age 65–74 and female sex). Each score
+                corresponds to an annual risk of stroke. The risk percentages below were derived from
+                <a href="https://www.ahajournals.org/doi/full/10.1161/STROKEAHA.110.590257" target="_blank">Lip et al
+                    Stroke. 2010;41:2731-2738</a>.
+            </p>
+            <p>
+                Disclaimer: This app is for demonstration purpose only and not for actual clinical usage purpose.
+            </p>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-9">
+            <h4>Calculator</h4>
+        </div>
+        <div class="col-3">
+            <form class="mb-0 d-inline-block">
+                <span class="bmd-form-group bmd-form-group-sm">
+                    <div class="switch">
+                        <label>
+                            <input type="checkbox" [(ngModel)]="requestServer" name="deploy" (change)="clearForm()" />
+                            With Server
+                        </label>
+                    </div>
+                </span>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row ">
+        <div class="col-11">
+            <form id="calculatorForm" name="calculator" #calculatorForm="ngForm">
+                <div class="form-group row">
+                    <div class="col-sm-8">
+                        <label for="chf" class="col-form-label">
+                            Cardiac failure or Dysfunction
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio1" name="chf" class="custom-control-input" [value]="true"
+                                    [(ngModel)]="formData.congestiveHeartFailure" required>
+                                Yes
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio2" name="chf" class="custom-control-input" [value]="false"
+                                    [(ngModel)]="formData.congestiveHeartFailure" required>
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-8">
+                        <label for="Hypertension" class="col-form-label">
+                            Hypertension
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio3" name="Hypertension" class="custom-control-input"
+                                    [value]="true" [(ngModel)]="formData.hypertension" required>
+                                Yes
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio4" name="Hypertension" class="custom-control-input"
+                                    [value]="false" [(ngModel)]="formData.hypertension" required>
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-8">
+                        <label for="diabetes" class="col-form-label">
+                            Diabetes Mellitus
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio5" name="diabetes" class="custom-control-input"
+                                    [value]="true" [(ngModel)]="formData.diabetesMellitus" required>
+                                Yes
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio6" name="diabetes" class="custom-control-input"
+                                    [value]="false" [(ngModel)]="formData.diabetesMellitus" required>
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-8">
+                        <label for="Stroke" class="col-form-label">
+                            Stroke
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio7" name="Stroke" class="custom-control-input"
+                                    [value]="true" [(ngModel)]="formData.priorStroke" required>
+                                Yes
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio8" name="Stroke" class="custom-control-input"
+                                    [value]="false" [(ngModel)]="formData.priorStroke" required>
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-8">
+                        <label for="Vascular" class="col-form-label">
+                            Vascular disease
+                            <p class="text-muted mb-0 subtext pt-1"> e.g. Peripheral Artery Disease, Myocardial
+                                Infarction,
+                                Aortic
+                                Plaque</p>
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio9" name="Vascular" class="custom-control-input"
+                                    [value]="true" [(ngModel)]="formData.vascularDisease" required>
+                                Yes
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio10" name="Vascular" class="custom-control-input"
+                                    [value]="false" [(ngModel)]="formData.vascularDisease" required>
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-8">
+                        <label for="Gender" class="col-form-label">
+                            Sex
+                        </label>
+                    </div>
+                    <div class="col-sm-2">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" id="customRadio12" name="Gender" class="custom-control-input"
+                                        value="Female" [(ngModel)]="formData.sexCategory" required>
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+                    <div class="col-sm-2">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="customRadio11" name="Gender" class="custom-control-input"
+                                    value="Male" [(ngModel)]="formData.sexCategory" required>
+                                Male
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-group row pt-0">
+                    <div class="col-sm-8 pt-2">
+                        <label for="Age" class="col-form-label">
+                            Age
+                        </label>
+                    </div>
+                    <div class="col-sm-2 pb-2">
+                        <input type="number" class="form-control" name="Age" min="0" placeholder="age" [(ngModel)]="formData.age"
+                            required>
+                    </div>
+                </div>
+                <igia-loader [loaded]="loaded"></igia-loader>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+                <button type="submit" [disabled]="calculatorForm.form.invalid || formData.age < 0" class="mt-1 btn btn-outline-primary btn-lg calculate-btn"
+                (click)="onSubmit()">Calculate</button>
+                <div class="text-warning subtext pl-1" *ngIf="calculatorForm.form.invalid">
+                        * Please answer all questions.
+                </div>
+				<div class="text-warning subtext pl-1" *ngIf="formData.age < 0">
+                        * Invalid age value.
+                </div>
+        </div>
+        <div class="col-1 box-border resultText">
+              <h4>
+                    Result
+              </h4>
+        </div>
+        <div class="col-7 pl-0 result">
+            <div class="box-border no-left-border">
+                <div class="result-Box pt-2">
+                        <h6>Total Points</h6>
+                        <h5>{{answerData.totalPoint}}/9</h5>
+                </div>
+                <div class="result-Box pt-2">
+                    <h6>Annual Stroke Risk</h6> 
+                    <h5>{{answerData.strokeRiskPercent}} % </h5> 
+                </div>
+            </div>
+        </div>
+</div>
