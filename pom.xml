@@ -18,7 +18,7 @@
 
     <groupId>io.igia</groupId>
     <artifactId>cha2ds2-vasc-application</artifactId>
-    <version>0.3.0</version>
+    <version>0.3.2</version>
     <packaging>war</packaging>
     <name>Cha 2 Ds 2 Vascapp</name>
 
@@ -81,7 +81,7 @@
         <scala-maven-plugin.version>3.4.2</scala-maven-plugin.version>
         <sonar-maven-plugin.version>3.5.0.1254</sonar-maven-plugin.version>
         <git-commit-id-plugin.version>2.2.5</git-commit-id-plugin.version>
-        <igia-hipaa-audit-autoconfig.version>0.3.0</igia-hipaa-audit-autoconfig.version>
+        <igia-hipaa-audit-autoconfig.version>0.3.2</igia-hipaa-audit-autoconfig.version>
 
         <!-- Sonar properties -->
         <sonar.host.url>http://localhost:9001</sonar.host.url>
